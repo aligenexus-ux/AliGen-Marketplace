@@ -15,6 +15,7 @@
         "slide-0": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/file_00000000917c7246a7db746103809fba.png",
             "image_overlay_opacity": 10,
             "heading": "تصفح أحدث منتجاتنا",
             "heading_size": "h1",
