@@ -3614,38 +3614,3 @@ details-disclosure > details {
 }
 
 
-.aligen-hero-overlay{
-
-position:absolute;
-
-top:50%;
-
-left:50%;
-
-transform:translate(-50%,-50%);
-
-z-index:9;
-
-text-align:center;
-
-color:white;
-}
-
-.aligen-content h1{
-
-font-size:72px;
-
-font-weight:900;
-
-margin-bottom:20px;
-}
-
-.aligen-content p{
-
-font-size:20px;
-
-max-width:700px;
-
-margin:auto;
-}
-
