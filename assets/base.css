@@ -3614,3 +3614,135 @@ details-disclosure > details {
 }
 
 
+/* ================================
+   ALIGEN LUXURY UI SYSTEM
+================================ */
+
+:root{
+  --primary:#0d1b5e;
+  --secondary:#1f4fff;
+  --gold:#d4af37;
+  --light:#f8f9fc;
+  --dark:#081033;
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+
+  --shadow-soft:
+    0 10px 30px rgba(0,0,0,.08);
+
+  --shadow-hover:
+    0 15px 40px rgba(0,0,0,.15);
+
+  --transition:
+    all .35s ease;
+}
+
+body{
+  background:#f8f9fc;
+  overflow-x:hidden;
+}
+
+/* Smooth Scroll */
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* Buttons */
+
+.button,
+button,
+.btn{
+
+  border-radius:18px!important;
+
+  transition:.3s ease;
+
+  font-weight:700;
+
+  letter-spacing:.5px;
+}
+
+.button:hover{
+  transform:translateY(-3px);
+}
+
+/* Cards */
+
+.card{
+  border-radius:24px!important;
+
+  overflow:hidden;
+
+  transition:.35s ease;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+
+  box-shadow:var(--shadow-hover);
+}
+
+/* Sections */
+
+.section{
+  padding:80px 0;
+}
+
+/* Gradient Text */
+
+.gradient-text{
+  background:linear-gradient(
+      90deg,
+      var(--gold),
+      #fff,
+      var(--gold)
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+/* Luxury Heading */
+
+h1,h2,h3,h4{
+  letter-spacing:-1px;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--gold);
+  border-radius:20px;
+}
+
+.aligen-topbar{
+background:linear-gradient(
+90deg,
+#1f4fff,
+#0d1b5e
+);
+
+color:white;
+
+padding:10px 0;
+
+font-size:13px;
+
+font-weight:600;
+}
+
+.aligen-topbar .page-width{
+display:flex;
+justify-content:center;
+gap:40px;
+}
