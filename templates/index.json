@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/file_00000000917c7246a7db746103809fba.png",
             "image_overlay_opacity": 10,
-            "heading": "تصفح أحدث منتجاتنا",
+            "heading": "Browse our latest products",
             "heading_size": "h1",
             "subheading": "",
             "button_label": "Shop all",
@@ -50,9 +50,9 @@
       "settings": {
         "collection": "all",
         "products_to_show": 4,
-        "title": "المنتجات الرقمية المميزة",
+        "title": "A Featured Digital Products",
         "heading_size": "h1",
-        "description": "<p>احدث المواقع والمتاجر الإلكترونية والمنتجات الرقمية </p>",
+        "description": "<p>Latest websites, online stores, and digital products </p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
