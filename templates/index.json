@@ -16,18 +16,18 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/rn-image_picker_lib_temp_acf68700-80f1-405c-b6a0-96d0fcb0c672.png",
-            "image_overlay_opacity": 0,
+            "image_overlay_opacity": 10,
             "heading": "AliGen",
-            "heading_size": "h1",
+            "heading_size": "h0",
             "subheading": "\"Your integrated platform for AI solutions, software, and ready-made website templates.\"",
             "button_label": "Shop now",
             "link": "shopify://collections/all",
             "button_style_secondary": true,
-            "show_text_box": false,
+            "show_text_box": true,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": "scheme-3"
+            "color_scheme": "scheme-1"
           }
         },
         "slide-0": {
@@ -40,8 +40,8 @@
             "subheading": "",
             "button_label": "Shop all",
             "link": "shopify://collections/all",
-            "button_style_secondary": false,
-            "show_text_box": false,
+            "button_style_secondary": true,
+            "show_text_box": true,
             "box_align": "middle-right",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
