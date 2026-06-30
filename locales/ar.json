@@ -843,7 +843,9 @@
         "gift_card_wrapper": {
           "add_label": "أضف بطاقة هدية"
         },
-        "gift_card_checkbox_label": "تطبيق بطاقة الهدايا"
+        "gift_card_checkbox_label": "تطبيق بطاقة الهدايا",
+        "pay_with_credit_card": "الدفع ببطاقة الائتمان",
+        "pay_with_debit_card": "ادفع ببطاقة السحب الآلي"
       },
       "order_summary": {
         "applied_discount_message": "خصم %{amount} من إجمالي سعر الطلب",
@@ -1031,7 +1033,8 @@
         },
         "remove_gift_card_label": "مسح بطاقة الهدايا",
         "remove_discount_label": "إزالة الخصم",
-        "return_shipping_fee_label": "إرجاع الشحنة"
+        "return_shipping_fee_label": "إرجاع الشحنة",
+        "alternative_payment_currency_chinese_yuan": "يرجى تأكيد المبلغ الإجمالي باليوان الصيني في تطبيق %{wallet}."
       },
       "taxes": {
         "vat_number": {
@@ -1469,7 +1472,8 @@
           "search_elsewhere": "ابحث في مكان آخر",
           "search_elsewhere_standalone": "ابحث في مكان آخر",
           "ship_items_or_search_elsewhere": "%{ship_items} أو %{search_elsewhere}"
-        }
+        },
+        "location_selected": "الموقع المحدد"
       },
       "split_delivery": {
         "pickup_all_items": "التقط جميع العناصر",
@@ -2232,7 +2236,8 @@
         "title": "ما هو الموقع الذي تشتري لأجله؟",
         "title_choose_location": "اختر موقعًا",
         "clear_search": "مسح البحث",
-        "try_new_search": "جرّب بحثًا جديدًا"
+        "try_new_search": "جرّب بحثًا جديدًا",
+        "error_loading_locations": "حدثت مشكلة في تحميل المواقع. تحقق من اتصالك بالإنترنت وحاول مرة أخرى."
       },
       "addresses": {
         "add_billing_address_button": "إضافة عنوان الفوترة",
@@ -2244,7 +2249,8 @@
         "cancel_adding_shipping_address_accessibility_label": "إلغاء إضافة عنوان الشحن",
         "save_new_billing_address_accessibility_label": "حفظ عنوان الفواتير",
         "save_new_shipping_address_accessibility_label": "حفظ عنوان الشحن",
-        "shipping_address_card_title": "عنوان الشحن"
+        "shipping_address_card_title": "عنوان الشحن",
+        "no_billing_address_banner": "لم تتم إضافة عنوان فوترة"
       },
       "orders": {
         "draft_order_list": {
@@ -2484,7 +2490,8 @@
         "pre_orders_title": "القادم",
         "billing_address": "عنوان الفواتير"
       },
-      "title": "طرق الدفع"
+      "title": "طرق الدفع",
+      "expiring_badge_label": "ينتهي قريبًا"
     },
     "payment_method_brands": {
       "visa": "تأشيرة",
@@ -2506,7 +2513,9 @@
       "bogus": "زائف",
       "klarna_pay_now": "كلارنا",
       "klarna_pay_later": "كلارنا",
-      "klarna_slice_it": "كلارنا"
+      "klarna_slice_it": "كلارنا",
+      "ideal": "آيديال",
+      "usdc": "العملات الرقمية: USDC"
     },
     "privacy_banner": {
       "cookie_preferences_link": "تفضيلات الكوكيز"
@@ -2643,7 +2652,8 @@
       "nav_label_accessibility_label": "الملاحة الرئيسية",
       "navigation_accessibility_message": "لقد انتقلت إلى {{sectionName}}",
       "open_menu_accessibility_label": "فتح التنقل الرئيسي",
-      "shop_logo_accessibility_label": "شعار {{shopName}}"
+      "shop_logo_accessibility_label": "شعار {{shopName}}",
+      "go_to_store_link": "اذهب إلى المتجر"
     },
     "announcement_bar": {
       "expand_label": "توسيع شريط الإعلانات",
@@ -2703,7 +2713,23 @@
           "loading_accessibility_label": "جارٍ تحميل الأشخاص"
         }
       },
-      "add_button": "أضِف"
+      "add_button": "أضِف",
+      "verify_current_email_modal": {
+        "description": "أدخل الرمز المكون من 6 أرقام الذي أُرسل إلى بريدك الإلكتروني الأصلي:",
+        "title": "تأكيد هويتك",
+        "verify_button_accessibility_label": "التحقق من بريدك الإلكتروني الحالي"
+      },
+      "marketing_preferences": {
+        "title": "تفضيلات التسويق",
+        "unsubscribe_confirmation": {
+          "description": "لن تتلقى بعد الآن رسائل تسويقية عبر البريد الإلكتروني من {{shopName}}",
+          "title": "إلغاء الاشتراك من رسائل البريد الإلكتروني؟"
+        },
+        "update_error": {
+          "description": "حدثت مشكلة أثناء تحديث تفضيلاتك التسويقية. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
+        },
+        "update_success": "تم تحديث تفضيلات التسويق"
+      }
     },
     "orders": {
       "list_layout_accessibility_label": "خيارات التخطيط",
@@ -2767,7 +2793,8 @@
         "filter": {
           "date": {
             "end_date": "تاريخ الانتهاء"
-          }
+          },
+          "date_section_accessibility_label": "تصفية حسب {{sectionTitle}}"
         },
         "pagination": {
           "previous_accessibility_label": "الطلبات السابقة",
@@ -2781,7 +2808,8 @@
         },
         "location_filter_picker": {
           "current_location": "الموقع الحالي"
-        }
+        },
+        "sort_options_accessibility_label": "خيارات الفرز للطلبات المؤكدة"
       },
       "order_status": {
         "canceled_label": "ملغي",
@@ -2813,7 +2841,32 @@
         "external_promise_manage_button_label": {
           "buy_with_prime": "الإدارة على أمازون"
         },
-        "delivery_exception_action_required": "الإجراء المطلوب"
+        "delivery_exception_action_required": "الإجراء المطلوب",
+        "confirmed_description_pickup": "نحن نجهز هذه المنتجات للاستلام.",
+        "confirmed_description_shipping": "نحن نجهز هذه المواد للشحن.",
+        "arrives": "تصل {{date}}",
+        "delivery_estimate_backed_by": "بدعم من",
+        "delivery_estimate_delayed_description": "خدمات التوصيل إلى منطقتك أبطأ من المعتاد. قد يصل طلبك متأخرًا.",
+        "delivery_estimate_delayed_title": "متأخر",
+        "delivery_estimate_early_description": "عمليات التسليم إلى منطقتك أسرع من المعتاد. قد يصل هذا الطلب مبكرًا.",
+        "delivery_exception_attempted_action": "جدولة توصيل جديد",
+        "delivery_exception_attempted_description": "{{link}} مع {{carrier}} أو تحقق من إشعار التسليم",
+        "delivery_exception_attempted_description_unknown": "{{link}} أو التحقق من إشعار التسليم",
+        "delivery_exception_attempted_title": "تمت محاولة التسليم",
+        "delivery_exception_delivery_failed": "فشل التسليم",
+        "delivery_exception_failed_action": "تحقق مع {{carrier}}",
+        "delivery_exception_failed_description": "{{link}} أو اتصل بنا للمزيد من المعلومات",
+        "delivery_exception_failed_description_unknown": "تواصل مع شركة الشحن للحصول على مزيد من المعلومات",
+        "delivery_exception_on_hold_action": "تحديث تفاصيل التسليم",
+        "delivery_exception_on_hold_description": "{{link}} مع {{carrier}} لإعادة طلبك إلى المسار الصحيح",
+        "delivery_exception_on_hold_description_unknown": "{{link}} لإعادة تنشيط طلبك",
+        "delivery_exception_on_hold_title": "قيد الانتظار",
+        "delivery_exception_returning_to_sender_action": "اتصل بـ {{carrier}}",
+        "delivery_exception_returning_to_sender_description": "{{link}} للمزيد من المعلومات",
+        "delivery_exception_returning_to_sender_description_unknown": "تواصل مع شركة الشحن للحصول على مزيد من المعلومات",
+        "delivery_exception_shop_promise_delivered_late_description": "طلبك مدعوم بـ Shop Promise. نظرًا لأنه وصل متأخرًا، يمكنك المطالبة بـ {{amount}} من رصيد Shop Cash.",
+        "delivery_exception_shop_promise_delivered_late_title": "تم التسليم متأخرًا",
+        "predicted_by_shop": "توقعه شوب"
       }
     },
     "callback": {
@@ -2850,6 +2903,9 @@
         },
         "emv_details": {
           "source": "المصدر:"
+        },
+        "shop_pay_installments": {
+          "summary": "أقساط المتجر"
         }
       },
       "refunded_amount": "تم رد الأموال",
@@ -2891,6 +2947,17 @@
       },
       "fees": {
         "return_shipping_fee": "إرجاع الشحنة"
+      },
+      "shop_order_tracking": {
+        "real_time_delivery_updates_with_gift": "احصل على تحديثات التسليم في الوقت الفعلي وهدية بقيمة {{promoAmount}} لتنفقها في تطبيق Shop.",
+        "shop_app_promo_amount_off": "احصل على هدية بقيمة {{promoAmount}}",
+        "shop_app_promo_text": "{{amountOff}} للإنفاق في تطبيق Shop"
+      },
+      "shop_pay": {
+        "usdc_rewards_terms": "عرض شروط مكافآت USDC"
+      },
+      "vat_invoices": {
+        "label": "ضريبة القيمة المضافة"
       }
     },
     "addresses": {
