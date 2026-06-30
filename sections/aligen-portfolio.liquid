@@ -1,189 +1,1108 @@
 {% liquid
-assign section_title = section.settings.title
-assign section_subtitle = section.settings.subtitle
+  assign id = section.id
+  assign show_stats = section.settings.show_stats
+  assign show_filters = section.settings.show_filters
+  assign columns = section.settings.columns_desktop
+  assign enable_animations = section.settings.enable_animations
 %}
 
-<section id="aligen-portfolio-{{ section.id }}" class="aligen-portfolio">
+<style>
+  :root {
+    --aligen-primary: {{ section.settings.primary_color }};
+    --aligen-secondary: {{ section.settings.secondary_color }};
+    --aligen-bg: {{ section.settings.bg_color }};
+    --aligen-card-bg: rgba(255, 255, 255, 0.03);
+    --aligen-border: rgba(255, 255, 255, 0.08);
+    --aligen-text: #f3f4f6;
+    --aligen-text-muted: #9ca3af;
+    --aligen-glow-speed: {{ section.settings.animation_speed }}s;
+  }
 
-  <div class="page-width">
-  
-      <div class="portfolio-header">
-      
-            <span class="portfolio-badge">
-                    {{ section.settings.badge }}
-                          </span>
-                          
-                                <h2 class="portfolio-title">
-                                        {{ section_title }}
-                                              </h2>
-                                              
-                                                    <p class="portfolio-subtitle">
-                                                            {{ section_subtitle }}
-                                                                  </p>
-                                                                  
-                                                                      </div>
-                                                                      
-                                                                          <div class="portfolio-grid">
-                                                                          
-                                                                                {% for block in section.blocks %}
-                                                                                
-                                                                                      <div class="portfolio-card">
-                                                                                      
-                                                                                              {% if block.settings.image != blank %}
-                                                                                                      <div class="portfolio-image">
-                                                                                                                <img
-                                                                                                                            src="{{ block.settings.image | image_url: width: 1200 }}"
-                                                                                                                                        alt="{{ block.settings.title }}"
-                                                                                                                                                    loading="lazy"
-                                                                                                                                                                width="1200"
-                                                                                                                                                                            height="800">
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                            {% endif %}
-                                                                                                                                                                                            
-                                                                                                                                                                                                    <div class="portfolio-content">
-                                                                                                                                                                                                    
-                                                                                                                                                                                                              <span class="portfolio-category">
-                                                                                                                                                                                                                          {{ block.settings.category }}
-                                                                                                                                                                                                                                    </span>
-                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                              <h3>
-                                                                                                                                                                                                                                                          {{ block.settings.title }}
-                                                                                                                                                                                                                                                                    </h3>
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                              <p>
-                                                                                                                                                                                                                                                                                          {{ block.settings.description }}
-                                                                                                                                                                                                                                                                                                    </p>
-                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                              <div class="portfolio-buttons">
-                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                          {% if block.settings.demo_url != blank %}
-                                                                                                                                                                                                                                                                                                                                      <a
-                                                                                                                                                                                                                                                                                                                                                    href="{{ block.settings.demo_url }}"
-                                                                                                                                                                                                                                                                                                                                                                  class="portfolio-btn portfolio-btn-primary"
-                                                                                                                                                                                                                                                                                                                                                                                target="_blank">
-                                                                                                                                                                                                                                                                                                                                                                                              👁 معاينة الموقع
-                                                                                                                                                                                                                                                                                                                                                                                                          </a>
-                                                                                                                                                                                                                                                                                                                                                                                                                      {% endif %}
-                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                                                  {% if block.settings.order_url != blank %}
-                                                                                                                                                                                                                                                                                                                                                                                                                                              <a
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            href="{{ block.settings.order_url }}"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          class="portfolio-btn portfolio-btn-secondary">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        🚀 اطلب هذا المشروع
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {% endif %}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              {% endfor %}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {% schema %}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "name": "AliGen Portfolio",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "tag": "section",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "class": "aligen-portfolio-section",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "settings": [
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "type": "text",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "id": "badge",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "label": "النص الصغير",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "default": "AliGen Nexus"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "type": "text",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "id": "title",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "label": "العنوان",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "default": "أعمالنا ومشاريعنا"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "type": "textarea",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "id": "subtitle",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "label": "الوصف",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "default": "مجموعة من أفضل المتاجر والمواقع والأنظمة والمنتجات الرقمية التي قمنا بتطويرها."
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ],
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "blocks": [
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "type": "project",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "name": "مشروع",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "settings": [
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "type":"image_picker",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "id":"image",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "label":"صورة المشروع"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "type":"text",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "id":"title",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "label":"اسم المشروع"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    "type":"text",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "id":"category",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "label":"التصنيف"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "type":"textarea",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "id":"description",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "label":"الوصف"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "type":"url",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "id":"demo_url",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    "label":"رابط المعاينة"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "type":"url",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "id":"order_url",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "label":"رابط الطلب"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ],
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "presets":[
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "name":"AliGen Portfolio",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "blocks":[
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "type":"project"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    "type":"project"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "type":"project"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  {% endschema %}
+  .aligen-portfolio-pro {
+    background-color: var(--aligen-bg);
+    color: var(--aligen-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    direction: rtl;
+  }
+
+  /* Tech Grid Backdrop */
+  .aligen-tech-backdrop {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+      linear-gradient(var(--aligen-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--aligen-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at 50% 30%, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 30%, black, transparent 80%);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .aligen-glow-orb {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--aligen-primary) 0%, transparent 70%);
+    top: 10%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+    {% if enable_animations %}
+    animation: aligenPulse var(--aligen-glow-speed) ease-in-out infinite alternate;
+    {% endif %}
+  }
+
+  @keyframes aligenPulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.12; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+  }
+
+  .aligen-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Header / Hero */
+  .aligen-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+  }
+
+  .aligen-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--aligen-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--aligen-primary);
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.02);
+  }
+
+  .aligen-title {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 30%, var(--aligen-text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .aligen-subtitle {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--aligen-text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .aligen-hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .aligen-main-btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 15px;
+  }
+
+  .aligen-main-btn-primary {
+    background: var(--aligen-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .aligen-main-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--aligen-primary);
+  }
+
+  .aligen-main-btn-secondary {
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+    border: 1px solid var(--aligen-border);
+  }
+
+  .aligen-main-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Stats Section */
+  .aligen-stats-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--aligen-border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 60px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .aligen-stat-item {
+    text-align: center;
+  }
+
+  .aligen-stat-num {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  .aligen-stat-label {
+    font-size: 14px;
+    color: var(--aligen-text-muted);
+  }
+
+  /* Filters */
+  .aligen-filters-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+
+  .aligen-filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--aligen-border);
+    color: var(--aligen-text-muted);
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .aligen-filter-btn:hover, .aligen-filter-btn.active {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+  }
+
+  /* Grid Layout */
+  .aligen-grid {
+    display: grid;
+    grid-template-columns: repeat({{ columns }}, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  @media (max-width: 1024px) {
+    .aligen-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .aligen-grid { grid-template-columns: 1fr; }
+    .aligen-hero-cta { flex-direction: column; }
+  }
+
+  /* Cards (Glassmorphism & Browser Frame) */
+  .aligen-card {
+    background: var(--aligen-card-bg);
+    border: 1px solid var(--aligen-border);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .aligen-card.hidden {
+    display: none;
+  }
+
+  /* Browser Chrome UI Frame */
+  .aligen-browser-frame {
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--aligen-border);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .aligen-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+  .aligen-dot:nth-child(1) { background: #ff5f56; }
+  .aligen-dot:nth-child(2) { background: #ffbd2e; }
+  .aligen-dot:nth-child(3) { background: #27c93f; }
+
+  .aligen-browser-url {
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--aligen-text-muted);
+    padding: 2px 12px;
+    margin-right: auto;
+    direction: ltr;
+    font-family: monospace;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Card Image */
+  .aligen-card-img-holder {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .aligen-card-img-holder img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .aligen-card:hover .aligen-card-img-holder img {
+    transform: scale(1.06);
+  }
+
+  /* Badges & Tags */
+  .aligen-card-badges {
+    position: absolute;
+    top: 12px; right: 12px;
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+  }
+
+  .aligen-tag {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .aligen-tag-status { background: var(--aligen-secondary); }
+  .aligen-tag-highlight { background: linear-gradient(135deg, #ff007a, #7928ca); }
+
+  /* Card Body */
+  .aligen-card-body {
+    padding: 24px;
+  }
+
+  .aligen-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .aligen-card-cat {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--aligen-primary);
+    letter-spacing: 0.5px;
+  }
+
+  .aligen-card-rating {
+    font-size: 13px;
+    color: #ffb703;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .aligen-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+
+  .aligen-card-desc {
+    font-size: 14px;
+    color: var(--aligen-text-muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    height: 44px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  /* Tech Tags */
+  .aligen-tech-stack {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .aligen-tech-pill {
+    font-size: 11px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--aligen-border);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #e5e7eb;
+  }
+
+  .aligen-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--aligen-border);
+    padding-top: 18px;
+    gap: 8px;
+  }
+
+  .aligen-card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .aligen-card-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .aligen-btn-icon {
+    width: 38px; height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--aligen-border);
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .aligen-btn-icon:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+  }
+
+  .aligen-btn-order {
+    padding: 0 16px;
+    height: 38px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .aligen-btn-order:hover {
+    background: var(--aligen-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Modal Showcase Styles */
+  .aligen-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+  }
+
+  .aligen-modal.active {
+    opacity: 1; visibility: visible;
+  }
+
+  .aligen-modal-container {
+    background: #0d0e12;
+    border: 1px solid var(--aligen-border);
+    border-radius: 16px;
+    width: 100%; max-width: 1100px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+
+  .aligen-modal.active .aligen-modal-container {
+    transform: scale(1);
+  }
+
+  .aligen-modal-header {
+    background: rgba(255,255,255,0.02);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--aligen-border);
+  }
+
+  .aligen-modal-title {
+    font-size: 18px; font-weight: 700; color: #fff;
+  }
+
+  .aligen-modal-close {
+    background: none; border: none; color: #fff; font-size: 24px; cursor: pointer;
+  }
+
+  .aligen-modal-body {
+    flex: 1; position: relative; background: #000;
+  }
+
+  .aligen-iframe-loader {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px; height: 40px;
+    border: 3px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    border-top-color: var(--aligen-primary);
+    animation: aligenSpin 1s linear infinite;
+  }
+
+  @keyframes aligenSpin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .aligen-modal-body iframe {
+    width: 100%; height: 100%; border: none; opacity: 0; transition: opacity 0.3s ease; position: relative; z-index: 2;
+  }
+</style>
+
+<section id="aligen-portfolio-{{ id }}" class="aligen-portfolio-pro" data-section-id="{{ id }}">
+  <div class="aligen-tech-backdrop"></div>
+  <div class="aligen-glow-orb"></div>
+
+  <div class="aligen-container">
+    
+    <!-- Hero Header -->
+    <div class="aligen-hero">
+      {% if section.settings.badge != blank %}
+        <span class="aligen-badge">{{ section.settings.badge }}</span>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="aligen-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="aligen-subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+
+      {% if section.settings.hero_btn1_text != blank or section.settings.hero_btn2_text != blank %}
+        <div class="aligen-hero-cta">
+          {% if section.settings.hero_btn1_text != blank %}
+            <a href="{{ section.settings.hero_btn1_url }}" class="aligen-main-btn aligen-main-btn-primary">{{ section.settings.hero_btn1_text }}</a>
+          {% endif %}
+          {% if section.settings.hero_btn2_text != blank %}
+            <a href="{{ section.settings.hero_btn2_url }}" class="aligen-main-btn aligen-main-btn-secondary">{{ section.settings.hero_btn2_text }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Stats Section -->
+    {% if show_stats %}
+      <div class="aligen-stats-wrapper">
+        <div class="aligen-stat-item">
+          <span class="aligen-stat-num" data-target="{{ section.settings.stat1_num }}">0</span>
+          <div class="aligen-stat-label">{{ section.settings.stat1_label }}</div>
+        </div>
+        <div class="aligen-stat-item">
+          <span class="aligen-stat-num" data-target="{{ section.settings.stat2_num }}">0</span>
+          <div class="aligen-stat-label">{{ section.settings.stat2_label }}</div>
+        </div>
+        <div class="aligen-stat-item">
+          <span class="aligen-stat-num" data-target="{{ section.settings.stat3_num }}">0</span>
+          <div class="aligen-stat-label">{{ section.settings.stat3_label }}</div>
+        </div>
+        <div class="aligen-stat-item">
+          <span class="aligen-stat-num" data-target="{{ section.settings.stat4_num }}">0</span>
+          <div class="aligen-stat-label">{{ section.settings.stat4_label }}</div>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Dynamic JavaScript Tabs Filters -->
+    {% if show_filters %}
+      <div class="aligen-filters-nav">
+        <button class="aligen-filter-btn active" data-filter="all">الكل</button>
+        {% assign filter_categories = "" %}
+        {% for block in section.blocks %}
+          {% if block.settings.category != blank %}
+            {% unless filter_categories contains block.settings.category %}
+              <button class="aligen-filter-btn" data-filter="{{ block.settings.category | handleize }}">{{ block.settings.category }}</button>
+              {% capture filter_categories %}{{ filter_categories }},{{ block.settings.category }}{% endcapture %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Portfolio Projects Grid -->
+    <div class="aligen-grid">
+      {% for block in section.blocks %}
+        {% liquid
+          assign custom_color = block.settings.custom_color
+          assign has_image = false
+          if block.settings.image != blank
+            assign assign has_image = true
+          endif
+        %}
+
+        <div class="aligen-card" 
+             data-category="{{ block.settings.category | handleize }}"
+             {% if custom_color != blank %}style="--aligen-primary: {{ custom_color }};"{% endif %}
+             {{ block.shopify_attributes }}>
+          
+          <!-- Browser Frame UI -->
+          <div class="aligen-browser-frame">
+            <div class="aligen-dot"></div>
+            <div class="aligen-dot"></div>
+            <div class="aligen-dot"></div>
+            <div class="aligen-browser-url">
+              {% if block.settings.demo_url != blank %}
+                {{ block.settings.demo_url | replace: 'https://', '' | replace: 'http://', '' }}
+              {% else %}
+                aligen-nexus.dev
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Card Thumbnail Area -->
+          <div class="aligen-card-img-holder">
+            {% if block.settings.badge_label != blank %}
+              <div class="aligen-card-badges">
+                <span class="aligen-tag {% if block.settings.badge_style == 'highlight' %}aligen-tag-highlight{% else %}aligen-tag-status{% endif %}">
+                  {{ block.settings.badge_label }}
+                </span>
+              </div>
+            {% endif %}
+
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 800 }}" 
+                   alt="{{ block.settings.title | escape }}" 
+                   loading="lazy" 
+                   width="800" 
+                   height="500">
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="aligen-card-body">
+            <div class="aligen-card-meta">
+              <span class="aligen-card-cat">{{ block.settings.category | default: "تطوير ويب" }}</span>
+              {% if block.settings.rating != "none" %}
+                <div class="aligen-card-rating">
+                  <span>★</span><span>{{ block.settings.rating }}</span>
+                </div>
+              {% endif %}
+            </div>
+
+            <h3 class="aligen-card-title">{{ block.settings.title | default: "اسم المشروع الافتراضي" }}</h3>
+            <p class="aligen-card-desc">{{ block.settings.description }}</p>
+
+            <!-- Tech Stack Pills -->
+            {% if block.settings.technologies != blank %}
+              <div class="aligen-tech-stack">
+                {% assign tags = block.settings.technologies | split: "," %}
+                {% for tag in tags %}
+                  <span class="aligen-tech-pill">{{ tag | strip }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <!-- Actions Footer -->
+            <div class="aligen-card-footer">
+              <div class="aligen-card-price">
+                {% if block.settings.price != blank %}
+                  {{ block.settings.price }}
+                {% endif %}
+              </div>
+              <div class="aligen-card-actions">
+                {% if block.settings.video_url != blank %}
+                  <a href="{{ block.settings.video_url }}" class="aligen-btn-icon" target="_blank" title="مشاهدة فيديو المشروع" aria-label="مشاهدة فيديو">🎥</a>
+                {% endif %}
+
+                {% if block.settings.demo_url != blank %}
+                  <button type="button" class="aligen-btn-icon aligen-trigger-modal" data-url="{{ block.settings.demo_url }}" data-title="{{ block.settings.title }}" title="معاينة فورية" aria-label="معاينة فورية">👁</button>
+                {% endif %}
+
+                {% if block.settings.order_url != blank %}
+                  <a href="{{ block.settings.order_url }}" class="aligen-btn-order">🚀 اطلب الآن</a>
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- Advanced Interactive Modal Box Container -->
+<div class="aligen-modal" id="aligen-portfolio-modal">
+  <div class="aligen-modal-container">
+    <div class="aligen-modal-header">
+      <div class="aligen-modal-title" id="aligen-modal-project-title">معاينة المشروع</div>
+      <button type="button" class="aligen-modal-close" id="aligen-modal-close-btn">&times;</button>
+    </div>
+    <div class="aligen-modal-body">
+      <div class="aligen-iframe-loader"></div>
+      <iframe id="aligen-portfolio-iframe" src="" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sectionContainer = document.querySelector('#aligen-portfolio-{{ id }}');
+    if (!sectionContainer) return;
+
+    const enableAnimations = {{ enable_animations | json }};
+
+    // 1. Dynamic JavaScript Category Filter Architecture
+    const filterButtons = sectionContainer.querySelectorAll('.aligen-filter-btn');
+    const cards = sectionContainer.querySelectorAll('.aligen-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.classList.remove('hidden');
+            if (enableAnimations) {
+              card.style.opacity = '0';
+              setTimeout(() => { card.style.opacity = '1'; card.style.transition = 'opacity 0.4s ease'; }, 50);
+            }
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 2. High-Performance Intersection Observer Counter Animation
+    const statNumbers = sectionContainer.querySelectorAll('.aligen-stat-num');
+    if (statNumbers.length > 0) {
+      const runCounters = () => {
+        statNumbers.forEach(num => {
+          const target = +num.getAttribute('data-target').replace(/\D/g, '');
+          const suffix = num.getAttribute('data-target').replace(/[0-9]/g, '');
+          const countTo = target;
+          let count = 0;
+          const speed = 2000 / countTo;
+
+          const updateCount = () => {
+            count += Math.ceil(countTo / 50);
+            if (count >= countTo) {
+              num.innerText = countTo + suffix;
+            } else {
+              num.innerText = count + suffix;
+              setTimeout(updateCount, 30);
+            }
+          };
+          updateCount();
+        });
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            runCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(sectionContainer.querySelector('.aligen-stats-wrapper') || sectionContainer);
+    }
+
+    // 3. Premium Interactive 3D Card Hover Effect (Mouse Tracking Mapping)
+    if (enableAnimations && window.innerWidth > 1024) {
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left; 
+          const y = e.clientY - rect.top; 
+
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
+
+          const angleX = (yc - y) / 20; 
+          const angleY = (x - xc) / 20;
+
+          card.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-6px)`;
+          card.style.boxShadow = `0 15px 35px rgba(0,0,0,0.5), 0 0 25px var(--aligen-primary, rgba(255,255,255,0.05))`;
+          card.style.borderColor = `var(--aligen-primary)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `rotateX(0deg) rotateY(0deg) translateY(0)`;
+          card.style.boxShadow = 'none';
+          card.style.borderColor = 'var(--aligen-border)';
+        });
+      });
+    }
+
+    // 4. Modal Iframe Real-Time Sandbox Preview Engine
+    const modal = document.getElementById('aligen-portfolio-modal');
+    const modalTitle = document.getElementById('aligen-modal-project-title');
+    const modalIframe = document.getElementById('aligen-portfolio-iframe');
+    const modalLoader = modal.querySelector('.aligen-iframe-loader');
+    const closeBtn = document.getElementById('aligen-modal-close-btn');
+    const triggers = sectionContainer.querySelectorAll('.aligen-trigger-modal');
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = trigger.getAttribute('data-url');
+        const title = trigger.getAttribute('data-title');
+
+        modalTitle.innerText = title;
+        modalIframe.src = url;
+        modalLoader.style.display = 'block';
+        modalIframe.style.opacity = '0';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    modalIframe.addEventListener('load', () => {
+      modalLoader.style.display = 'none';
+      modalIframe.style.opacity = '1';
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      modalIframe.src = '';
+      document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "AliGen Portfolio Pro",
+  "tag": "section",
+  "class": "aligen-portfolio-premium-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "🎨 إعدادات الهوية والتصميم والمظهر الأساسي"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "اللون الأساسي المتوهج (Accent)",
+      "default": "#7928ca"
+    },
+    {
+      "type": "color",
+      "id": "secondary_color",
+      "label": "اللون الثانوي (Tags)",
+      "default": "#0070f3"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "خلفية القسم العميقة",
+      "default": "#050507"
+    },
+    {
+      "type": "header",
+      "content": "🚀 نصوص واجهة الـ Hero الرئيسية"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "شارة الرأس العليا (Badge)",
+      "default": "AliGen Nexus Engine"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "العنوان الرئيسي العملاق",
+      "default": "منظومة أعمالنا ومشاريعنا الرقمية الفاخرة"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "الوصف والرسالة التسويقية العميقة للقسم",
+      "default": "استعرض طيفاً من المتاجر الإلكترونية المتكاملة، منصات الـ SaaS المتطورة، وحلول الذكاء الاصطناعي التي صممناها لتقود المستقبل الرقمي."
+    },
+    {
+      "type": "text",
+      "id": "hero_btn1_text",
+      "label": "نص زر الـ CTA الأول الرئيسي",
+      "default": "ابدأ مشروعك الآن 🚀"
+    },
+    {
+      "type": "url",
+      "id": "hero_btn1_url",
+      "label": "رابط زر الـ CTA الأول"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn2_text",
+      "label": "نص زر الـ CTA الثاني",
+      "default": "استشارة تقنية مجانية"
+    },
+    {
+      "type": "url",
+      "id": "hero_btn2_url",
+      "label": "رابط زر الـ CTA الثاني"
+    },
+    {
+      "type": "header",
+      "content": "📊 لوحة التحكم بقسم الإحصائيات الحيوية"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "label": "تفعيل وعرض شريط الإحصائيات المتطور",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat1_num",
+      "label": "رقم الإحصائية 1",
+      "default": "+120"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "عنوان الإحصائية 1",
+      "default": "متجر ومنصة رقمية"
+    },
+    {
+      "type": "text",
+      "id": "stat2_num",
+      "label": "رقم الإحصائية 2",
+      "default": "99%"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label",
+      "label": "عنوان الإحصائية 2",
+      "default": "نسبة رضا عملائنا"
+    },
+    {
+      "type": "text",
+      "id": "stat3_num",
+      "label": "رقم الإحصائية 3",
+      "default": "+5"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "عنوان الإحصائية 3",
+      "default": "سنوات التميز والابتكار"
+    },
+    {
+      "type": "text",
+      "id": "stat4_num",
+      "label": "رقم الإحصائية 4",
+      "default": "24/7"
+    },
+    {
+      "type": "text",
+      "id": "stat4_label",
+      "label": "عنوان الإحصائية 4",
+      "default": "دعم فني وحلول ذكية"
+    },
+    {
+      "type": "header",
+      "content": "⚙️ إعدادات التحكم بالبنية والـ Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "تمكين فلاتر التصنيفات الديناميكية (Tabs)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "عدد بطاقات المشاريع في الصف الواحد (سطح المكتب)",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animations",
+      "label": "تفعيل تأثيرات الـ 3D Hover وحركات الظهور الفاخرة",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "unit": "s",
+      "label": "سرعة تموج النبض الضوئي الخلفي",
+      "default": 6
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "مشروع رقمي احترافي",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "لقطة شاشة عالية الدقة للمشروع (16:10 Recommended)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "عنوان او اسم المشروع الأساسي",
+          "default": "متجر أوبال الفاخر"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "label": "التصنيف الرئيسي (يستخدم للفلترة)",
+          "default": "متاجر إلكترونية"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "نبذة تصف الابتكار والحل التقني المقدم في هذا العمل",
+          "default": "تطوير متجر إلكتروني فائق السرعة على منصة Shopify مع واجهة مستخدم مخصصة مبنية بـ Tailwind CSS المتقدمة ونظام ذكاء اصطناعي لترشيح المنتجات."
+        },
+        {
+          "type": "text",
+          "id": "technologies",
+          "label": "التقنيات المستخدمة (افصل بينها بفاصلة , )",
+          "default": "Shopify, Liquid, JavaScript, Tailwind, OpenAI API"
+        },
+        {
+          "type": "url",
+          "id": "demo_url",
+          "label": "رابط المعاينة المباشرة (Iframe Sandbox Live Video Link)"
+        },
+        {
+          "type": "url",
+          "id": "order_url",
+          "label": "رابط طلب امتلاك هذا المشروع او حجز شبيه له"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "رابط فيديو توثيقي للمشروع (اختياري)"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "سعر المشروع التقديري / يبدأ من (اختياري)",
+          "default": "$1,499"
+        },
+        {
+          "type": "text",
+          "id": "badge_label",
+          "label": "نص الشارة الخاصة بالبطاقة",
+          "default": "الأكثر طلباً"
+        },
+        {
+          "type": "select",
+          "id": "badge_style",
+          "label": "نمط ولون الشارة المخصصة",
+          "options": [
+            { "value": "status", "label": "لون موحد هادئ" },
+            { "value": "highlight", "label": "تدرج هولوغرافي نيون" }
+          ],
+          "default": "highlight"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "التقييم الرقمي للمشروع",
+          "options": [
+            { "value": "none", "label": "بدون تقييم" },
+            { "value": "5.0", "label": "5.0 كامل النجوم" },
+            { "value": "4.9", "label": "4.9 ممتاز جداً" },
+            { "value": "4.8", "label": "4.8 ممتاز" }
+          ],
+          "default": "5.0"
+        },
+        {
+          "type": "color",
+          "id": "custom_color",
+          "label": "لون متوهج مخصص لهذا الكرت فقط في حالة الـ Hover",
+          "default": "#0070f3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AliGen Portfolio Pro",
+      "blocks": [
+        { "type": "project" },
+        { "type": "project" },
+        { "type": "project" }
+      ]
+    }
+  ]
+}
+{% endschema %}
