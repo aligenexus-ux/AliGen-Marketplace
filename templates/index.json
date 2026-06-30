@@ -195,6 +195,7 @@
         "project_z6pWnE": {
           "type": "project",
           "settings": {
+            "image": "shopify://shop_images/9022a705161ff42b7879d88f1fd6d0e8.png",
             "title": "متجر أوبال الفاخر",
             "category": "متاجر إلكترونية",
             "description": "تطوير متجر إلكتروني فائق السرعة على منصة Shopify مع واجهة مستخدم مخصصة مبنية بـ Tailwind CSS المتقدمة ونظام ذكاء اصطناعي لترشيح المنتجات.",
