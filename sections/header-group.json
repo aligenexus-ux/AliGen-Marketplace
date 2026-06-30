@@ -53,58 +53,10 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "aligen_portfolio_mPjR7z": {
-      "type": "aligen-portfolio",
-      "blocks": {
-        "project_rYMMpK": {
-          "type": "project",
-          "settings": {
-            "image": "shopify://shop_images/1781822813643.png",
-            "title": "FIFA 2026",
-            "category": "احصائيات النتائج",
-            "description": "تابع نتائج واحصائيات كاس العالم 2026",
-            "demo_url": "https://fifa-2026-psi.vercel.app",
-            "order_url": "shopify://products/موقع-اكتروني-fifa-2026"
-          }
-        },
-        "project_GjhgwB": {
-          "type": "project",
-          "settings": {
-            "title": "",
-            "category": "",
-            "description": "",
-            "demo_url": "",
-            "order_url": ""
-          }
-        },
-        "project_TxmMt7": {
-          "type": "project",
-          "settings": {
-            "title": "",
-            "category": "",
-            "description": "",
-            "demo_url": "",
-            "order_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "project_rYMMpK",
-        "project_GjhgwB",
-        "project_TxmMt7"
-      ],
-      "name": "AliGen Portfolio",
-      "settings": {
-        "badge": "AliGen Nexus",
-        "title": "أعمالنا ومشاريعنا",
-        "subtitle": "مجموعة من أفضل المتاجر والمواقع والأنظمة والمنتجات الرقمية التي قمنا بتطويرها."
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "aligen_portfolio_mPjR7z"
+    "header"
   ]
 }

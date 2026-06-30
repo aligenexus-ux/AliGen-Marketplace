@@ -152,6 +152,93 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "aligen_portfolio_BjFXYY": {
+      "type": "aligen-portfolio",
+      "blocks": {
+        "project_HAhVXi": {
+          "type": "project",
+          "settings": {
+            "title": "متجر أوبال الفاخر",
+            "category": "متاجر إلكترونية",
+            "description": "تطوير متجر إلكتروني فائق السرعة على منصة Shopify مع واجهة مستخدم مخصصة مبنية بـ Tailwind CSS المتقدمة ونظام ذكاء اصطناعي لترشيح المنتجات.",
+            "technologies": "Shopify, Liquid, JavaScript, Tailwind, OpenAI API",
+            "demo_url": "",
+            "order_url": "",
+            "video_url": "",
+            "price": "$1,499",
+            "badge_label": "الأكثر طلباً",
+            "badge_style": "highlight",
+            "rating": "5.0",
+            "custom_color": "#0070f3"
+          }
+        },
+        "project_DaPGxP": {
+          "type": "project",
+          "settings": {
+            "title": "متجر أوبال الفاخر",
+            "category": "متاجر إلكترونية",
+            "description": "تطوير متجر إلكتروني فائق السرعة على منصة Shopify مع واجهة مستخدم مخصصة مبنية بـ Tailwind CSS المتقدمة ونظام ذكاء اصطناعي لترشيح المنتجات.",
+            "technologies": "Shopify, Liquid, JavaScript, Tailwind, OpenAI API",
+            "demo_url": "",
+            "order_url": "",
+            "video_url": "",
+            "price": "$1,499",
+            "badge_label": "الأكثر طلباً",
+            "badge_style": "highlight",
+            "rating": "5.0",
+            "custom_color": "#0070f3"
+          }
+        },
+        "project_z6pWnE": {
+          "type": "project",
+          "settings": {
+            "title": "متجر أوبال الفاخر",
+            "category": "متاجر إلكترونية",
+            "description": "تطوير متجر إلكتروني فائق السرعة على منصة Shopify مع واجهة مستخدم مخصصة مبنية بـ Tailwind CSS المتقدمة ونظام ذكاء اصطناعي لترشيح المنتجات.",
+            "technologies": "Shopify, Liquid, JavaScript, Tailwind, OpenAI API",
+            "demo_url": "",
+            "order_url": "",
+            "video_url": "",
+            "price": "$1,499",
+            "badge_label": "الأكثر طلباً",
+            "badge_style": "highlight",
+            "rating": "5.0",
+            "custom_color": "#0070f3"
+          }
+        }
+      },
+      "block_order": [
+        "project_HAhVXi",
+        "project_DaPGxP",
+        "project_z6pWnE"
+      ],
+      "name": "AliGen Portfolio Pro",
+      "settings": {
+        "primary_color": "#7928ca",
+        "secondary_color": "#0070f3",
+        "bg_color": "#050507",
+        "badge": "AliGen Nexus Engine",
+        "title": "منظومة أعمالنا ومشاريعنا الرقمية الفاخرة",
+        "subtitle": "استعرض طيفاً من المتاجر الإلكترونية المتكاملة، منصات الـ SaaS المتطورة، وحلول الذكاء الاصطناعي التي صممناها لتقود المستقبل الرقمي.",
+        "hero_btn1_text": "ابدأ مشروعك الآن 🚀",
+        "hero_btn1_url": "",
+        "hero_btn2_text": "استشارة تقنية مجانية",
+        "hero_btn2_url": "",
+        "show_stats": false,
+        "stat1_num": "+120",
+        "stat1_label": "متجر ومنصة رقمية",
+        "stat2_num": "99%",
+        "stat2_label": "نسبة رضا عملائنا",
+        "stat3_num": "+5",
+        "stat3_label": "سنوات التميز والابتكار",
+        "stat4_num": "24/7",
+        "stat4_label": "دعم فني وحلول ذكية",
+        "show_filters": true,
+        "columns_desktop": 2,
+        "enable_animations": true,
+        "animation_speed": 6
+      }
     }
   },
   "order": [
@@ -159,6 +246,7 @@
     "featured-collection-0",
     "slideshow_aY7TJN",
     "slideshow_cmMJjn",
-    "custom_liquid_M9WyxD"
+    "custom_liquid_M9WyxD",
+    "aligen_portfolio_BjFXYY"
   ]
 }
