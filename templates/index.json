@@ -152,6 +152,7 @@
         "slide_wnqcDj": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/shopify-theme.png",
             "image_overlay_opacity": 0,
             "heading": "Image slide",
             "heading_size": "h1",
@@ -163,7 +164,7 @@
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": ""
+            "color_scheme": "scheme-4"
           }
         },
         "slide_RnDQeN": {
