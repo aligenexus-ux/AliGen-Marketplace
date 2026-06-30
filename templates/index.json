@@ -41,11 +41,11 @@
             "button_label": "Shop all",
             "link": "shopify://collections/all",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-right",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": "scheme-3"
+            "color_scheme": "scheme-1"
           }
         }
       },
