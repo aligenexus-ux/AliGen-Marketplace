@@ -132,17 +132,17 @@
           "settings": {
             "image": "shopify://shop_images/1782612671368.png",
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
+            "subheading": "",
             "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
+            "link": "shopify://products/طريقة-بيع-منتج-أو-خدمة-على-الانترنت",
+            "button_style_secondary": true,
+            "show_text_box": true,
+            "box_align": "top-left",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
+            "color_scheme": "scheme-3"
           }
         }
       },
