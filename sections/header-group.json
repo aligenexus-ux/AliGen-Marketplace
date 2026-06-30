@@ -60,11 +60,12 @@
         "project_rYMMpK": {
           "type": "project",
           "settings": {
-            "title": "",
-            "category": "",
-            "description": "",
-            "demo_url": "",
-            "order_url": ""
+            "image": "shopify://shop_images/1781822813643.png",
+            "title": "FIFA 2026",
+            "category": "احصائيات النتائج",
+            "description": "تابع نتائج واحصائيات كاس العالم 2026",
+            "demo_url": "https://fifa-2026-psi.vercel.app",
+            "order_url": "shopify://products/موقع-اكتروني-fifa-2026"
           }
         },
         "project_GjhgwB": {
